@@ -21,7 +21,6 @@ class CreateScreensTable extends Migration
 
         Schema::table('screens', function($table) {
             $table->primary(['screen_path','report_id']);
-
             $table->foreign('report_id')->references('id')->on('reports')->onDelete('cascade')->onUpdate('cascade');
         });
     }

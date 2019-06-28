@@ -2,12 +2,15 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Police extends Model
+class Police extends Authenticatable
 {
-	public $incrementing = false;
+		public $incrementing = false;
     protected $primaryKey="police_passport_id";
+		protected $guard='admin';
     protected $fillable =[
     	'name',
     	'surname',

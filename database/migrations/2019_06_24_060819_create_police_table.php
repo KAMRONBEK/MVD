@@ -17,9 +17,11 @@ class CreatePoliceTable extends Migration
             $table->string('police_passport_id')->unique()->primary();
             $table->string('name')->nullable();
             $table->string('surname')->nullable();
+            $table->string("email")->nullable();
             $table->date('birthdate')->nullable();
             $table->string('INN')->unique()->nullable();
             $table->string('password')->nullable();
+            $table->rememberToken()->nullable();
             $table->timestamps();
         });
     }
